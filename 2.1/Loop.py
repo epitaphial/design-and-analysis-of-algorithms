@@ -1,3 +1,5 @@
+import time
+
 #求最大公因数
 def gcd(m,n):
 	if n != 0:
@@ -21,7 +23,6 @@ def remove(spn):
 #判断循环节
 def tellLoop(m,n):
 	m,n = int(m),int(n)
-	print(m,n)
 	remain,shang = m*10%n,m*10//n
 	tp = (remain,shang)
 	listS = []
@@ -36,6 +37,8 @@ def tellLoop(m,n):
 
 
 m,n = int(input("m=")),int(input("n="))
+
+timeS = time.time()
 
 Tgcd = gcd(m,n)
 spm = m/Tgcd
@@ -57,3 +60,5 @@ else:
 	loopstr = strX[int(placeBeg):int(placeEnd)]
 	Fistr = intPart+'.'+strX[:placeBeg]+'('+loopstr+')'
 	print(Fistr)
+
+print("执行时间："+str(time.time()-timeS))
